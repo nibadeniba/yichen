@@ -80,4 +80,14 @@ class User extends Eloquent{
         Session::set('user',$uinfo);
         return $uinfo; 
     }
+
+    public static function isTrue($mobile, $password)
+    {
+        $user = self::where("mobile", $mobile)->first();
+        if ($user && Hash::check($password, $user->password)) {
+            Session::put('admin', $user);
+            return true;
+        }
+        return false;
+    }
 }

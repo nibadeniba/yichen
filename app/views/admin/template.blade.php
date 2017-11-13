@@ -50,7 +50,7 @@
           <div class="side-user">
             <div class="avatar"><img src="/images/avatar1_50.jpg" alt="Avatar" /></div>
             <div class="info">
-              <a href="#">亿臣</a>
+              <a href="#">{{Session::get('admin')->name}}</a>
               <img src="/images/state_online.png" alt="Status" /> <span>线上办公</span>
             </div>
           </div>

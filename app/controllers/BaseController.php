@@ -20,4 +20,9 @@ class BaseController extends Controller {
 		}
 	}
 
+	public function ajaxReturn($data, $msg, $code)
+	{
+		return json_encode(compact("data", "msg", "code"));
+	}
+
 }

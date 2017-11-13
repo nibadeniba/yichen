@@ -18,7 +18,7 @@
 		<div class="header hide">  </div>
 		<div class="content">
 			<div class="title hide"></div>
-			<form name="" action="/admin/doLogin" method="post">
+			<form name="" action="/admin/login" method="post">
 				<fieldset>
 					<div class="input">
 						<input class="input_all name" name="mobile" id="name" placeholder="手机号" type="text" onFocus="this.className='input_all name_now';" onBlur="this.className='input_all name'" maxLength="24" />

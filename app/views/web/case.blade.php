@@ -1,43 +1,6 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<title>微享，不只是朋友圈中的分享</title>
-		<meta name="keywords" content="微信商城，网站制作" />
-		<meta name="description" content="微享，不只是朋友圈中的分享" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="css/animate.min.css" type="text/css" />
-		<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
-		<link rel="stylesheet" href="css/style.css" type="text/css" />
-		<script src="js/jquery-1.10.2.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-	</head>
-	<body>
-		<header class="header-frontend">
-        <div class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="index.html"><img src="images/logo.png"/></a>
-                </div>
-                <div class="navbar-collapse collapse" style="height: 1px;">
-                    <ul class="nav navbar-nav">
-                        <li><a href="index.html">首页</a></li>
-                        <li><a href="about.html">关于微享</a></li>
-                        <li><a href="news.html">新闻动态  </a> </li>
-                        <li  class="active"><a href="case.html">案例展示</a></li>
-                        <li><a href="product.html">微享产品</a></li>
-                        <li><a href="talent.html"> 招贤纳士</a></li>
-                        <li><a href="contact.html">联系我们</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </header>
+@extends('web.template')
+
+@section('content')
     <div class="casebg">
 	    <div class="container animated bounceInUp">
 	    	<h2>案例展示</h2>
@@ -57,7 +20,7 @@
 				<div class="col-lg-3 col-xs-12 casepic">
 					<div class="recent-work-wrap">
 			          <a href="detail.html">
-			          <img class="img-responsive" src="images/7.jpg" alt="">
+			          <img class="img-responsive" src="web/images/7.jpg" alt="">
 				          <div class="overlay">
 					            <div class="recent-work-inner">
 					              <h3>福隆超市连锁</h3>
@@ -69,7 +32,7 @@
 				<div class="col-lg-3 col-xs-12 casepic">
 					<div class="recent-work-wrap">
 			          <a href="detail.html">
-			          <img class="img-responsive" src="images/7a.jpg" alt="">
+			          <img class="img-responsive" src="web/images/7a.jpg" alt="">
 				          <div class="overlay">
 					            <div class="recent-work-inner">
 					              <h3>福隆超市连锁</h3>
@@ -81,7 +44,7 @@
 				<div class="col-lg-3 col-xs-12 casepic">
 					<div class="recent-work-wrap">
 			          <a href="detail.html">
-			          <img class="img-responsive" src="images/8.jpg" alt="">
+			          <img class="img-responsive" src="web/images/8.jpg" alt="">
 				          <div class="overlay">
 					            <div class="recent-work-inner">
 					              <h3>福隆超市连锁</h3>
@@ -93,7 +56,7 @@
 				<div class="col-lg-3 col-xs-12 casepic">
 					<div class="recent-work-wrap">
 			          <a href="detail.html">
-			          <img class="img-responsive" src="images/12.jpg" alt="">
+			          <img class="img-responsive" src="web/images/12.jpg" alt="">
 				          <div class="overlay">
 					            <div class="recent-work-inner">
 					              <h3>福隆超市连锁</h3>
@@ -105,7 +68,7 @@
 				<div class="col-lg-3 col-xs-12 casepic">
 					<div class="recent-work-wrap">
 			          <a href="">
-			          <img class="img-responsive" src="images/12.jpg" alt="">
+			          <img class="img-responsive" src="web/images/12.jpg" alt="">
 				          <div class="overlay">
 					            <div class="recent-work-inner">
 					              <h3>福隆超市连锁</h3>
@@ -117,7 +80,7 @@
 				<div class="col-lg-3 col-xs-12 casepic">
 					<div class="recent-work-wrap">
 			          <a href="">
-			          <img class="img-responsive" src="images/8.jpg" alt="">
+			          <img class="img-responsive" src="web/images/8.jpg" alt="">
 				          <div class="overlay">
 					            <div class="recent-work-inner">
 					              <h3>福隆超市连锁</h3>
@@ -129,7 +92,7 @@
 				<div class="col-lg-3 col-xs-12 casepic">
 					<div class="recent-work-wrap">
 			          <a href="">
-			          <img class="img-responsive" src="images/7a.jpg" alt="">
+			          <img class="img-responsive" src="web/images/7a.jpg" alt="">
 				          <div class="overlay">
 					            <div class="recent-work-inner">
 					              <h3>福隆超市连锁</h3>
@@ -141,7 +104,7 @@
 				<div class="col-lg-3 col-xs-12 casepic">
 					<div class="recent-work-wrap">
 			          <a href="">
-			          <img class="img-responsive" src="images/7.jpg" alt="">
+			          <img class="img-responsive" src="web/images/7.jpg" alt="">
 				          <div class="overlay">
 					            <div class="recent-work-inner">
 					              <h3>福隆超市连锁</h3>
@@ -164,9 +127,4 @@
 		    <li><a href="#">&raquo;</a></li>
 		  </ul>
 	</nav>
-	<div class="copyright">
-    	<p>Copyright © 2003-2016  广州澳新考拉信息技术有限公司  All Rights Reserved　粤ICP备123456号　</p>
-    	<p>Power by weshare</p>
-    </div>
-	</body>
-</html>
+@stop
