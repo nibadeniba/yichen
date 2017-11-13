@@ -53,6 +53,7 @@ Route::group(array('prefix'=>'admin/', 'before' => 'login'), function () {
 
 	// 产品管理
 	Route::get('products', array('as' => 'admin.products', 'uses' => 'AdminProductController@products'));
+	Route::post('productDel', array('as' => 'admin.productDel', 'uses' => 'AdminProductController@productDel'));
 
 	// 图片上传
 	Route::post('image/upload', array('as'=>'image.upload', 'uses'=> 'ImageUploadController@imageUpload'));

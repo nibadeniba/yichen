@@ -15,7 +15,6 @@
     <a href="#"><i class="fa fa-list-alt"></i><span>产品管理</span></a>
     <ul class="sub-menu">
         <li @if ($action == 'admin/products') class="active" @endif><a href="/admin/products">产品页</a></li>
-        <li @if ($action == 'admin/productImg') class="active" @endif><a href="/admin/productImg">产品图</a></li>
     </ul>
 </li>
 
