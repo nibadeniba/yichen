@@ -2,36 +2,28 @@
 
 @section('content')
 <link href="/js/umeditor1.2.3/themes/default/css/umeditor.css" type="text/css" rel="stylesheet">
+<style type="text/css" media="screen">
+	.remove{position: absolute;}
+	.edit{position: absolute;margin-left:70px;}
+</style>
 <div class="page-head">
- 	<h2>新闻管理</h2>
+ 	<h2>产品管理</h2>
  	<ol class="breadcrumb">
- 
-    	<li><a href="#">新闻</a></li>
-    	<li class="active">新闻添加</li>
+    	<li><a href="#">产品</a></li>
+    	<li class="active">产品添加</li>
   	</ol>
 </div>
 
 <div class="row page-head">
 	<div class="form-horizontal" id="news">
 		<div class="control-group">
-			<label class="control-label order_num" style="font-size: 20px;">添加新闻</label>
-			<div class="controls">
-				
-			</div>
-		</div>
-
-
-		<div class="control-group">
-			<label class="control-label">标题</label>
-			<div class="controls">
-				<input type="text" class="news_title" style="width: 640px;" placeholder="填写标题">
-			</div>
+			<label class="control-label order_num" style="font-size: 20px;">添加产品</label>
 		</div>
 
 		<div class="control-group">
-			<label class="control-label">标题</label>
+			<label class="control-label">产品名</label>
 			<div class="controls">
-				<input type="text" class="news_upper_title" style="width: 640px;" placeholder="填写副标题， 不填则于标题相同">
+				<input type="text" class="title" style="width: 640px;" placeholder="填写产品名" value="{{$product['title']}}">
 			</div>
 		</div>
 		
@@ -41,42 +33,27 @@
 				<form class="upload_from" enctype="multipart/form-data">
 					<input type="file" name="img" class="file_upload">
 					<input type="button" value="上传" class="btn btn-info u_btn">
-					<span style="color: red">160 * 160 效果最佳 不传图片为一张蓝底背景图</span>
 				</form>
-				
 			</div>
 		</div>
 
 		<div class="control-group">
 			<label class="control-label">图片</label>
-			<div class="controls">
-				<img src="/web/wu.jpg" width="160" height="16" class="img-polaroid">
+			<div class="controls img_box">
+			@foreach (explode(',', $product['url']) as $img)
+				<div class="fl">
+					<span class="btn btn-danger btn-mini remove">移除</span>
+					<img src="{{$img}}" width="160" class="img-polaroid">
+				</div>
+			@endforeach
 			</div>
 		</div>
-
-		<div class="control-group">
-			<label class="control-label">浏览量</label>
-			<div class="controls">
-				<input type="number" class="clicks" placeholder="" value="0">
-			</div>
-		</div>
-
-		<div class="control-group">
-			<label class="control-label">是否显示</label>
-			<div class="controls">
-				<select class="is_show">
-					<option value="1">是</option>
-					<option value="0">否</option>
-				</select>
-			</div>
-		</div>
-
-
 		<!-- 富文本编辑 -->
 		<div class="control-group">
 			<label class="control-label">详情编辑</label>
 			<div class="controls">
 				<script type="text/plain" id="myEditor" style="width: 800px;height:480px;">
+				{{$product['content']}}
 				</script>
 			</div>
 		</div>
@@ -84,11 +61,9 @@
 		<div class="control-group">
 			<label class="control-label" for=""></label>
 			<div class="controls">
-				<input type="button" class="news_add btn btn-primary" value="添加新闻">
+				<input type="button" class="add btn btn-primary" value="修改产品">
 			</div>
 		</div>
-
-
 	</div>
 </div>
 @stop
@@ -110,14 +85,27 @@
 			return window.wxc.xcConfirm('请选择文件', window.wxc.xcConfirm.typeEnum.error);
 		}
 
-		uploadImage(file[0].files[0], 'news', function (status, data) {
+		uploadImage(file[0].files[0], 'products', function (status, data) {
 			if (status == 200) {
 				var data = JSON.parse(data);
 				if (data.status == 1) {
 					//修改图片
-					img.attr('src', data.url);
+					$(".img-none").remove();
+					$(".img_box").append('<div class="fl">' +
+						'<span class="btn btn-danger btn-mini remove">移除</span>' +
+						'<img src="' + data.url + '" width="160" class="img-polaroid">' +
+						'</div>')
 					file.val('');
-
+					// 图片移除
+					$(".remove").unbind("click");
+					$(".remove").click(function(){
+						$(this).parent().remove();
+						if (!$(".remove").length) {
+							$(".img_box").append('<img src="/web/wu.jpg" width="160" class="img-none">');
+						}
+						return window.wxc.xcConfirm('所有图片操作将在点击修改之后真正生效', window.wxc.xcConfirm.typeEnum.success);
+					});
+					return window.wxc.xcConfirm('所有图片操作将在点击修改之后真正生效', window.wxc.xcConfirm.typeEnum.success);
 				} else {
 					return window.wxc.xcConfirm('上传失败' + data.message, window.wxc.xcConfirm.typeEnum.error);
 				}
@@ -125,60 +113,44 @@
 				return window.wxc.xcConfirm('请求失败'+ status, window.wxc.xcConfirm.typeEnum.error);
 			}
 		});
+	});
 
+	$(".remove").click(function(){
+		$(this).parent().remove();
+		if (!$(".remove").length) {
+			$(".img_box").append('<img src="/web/wu.jpg" width="160" class="img-none">');
+		}
+		return window.wxc.xcConfirm('所有图片操作将在点击修改之后真正生效', window.wxc.xcConfirm.typeEnum.success);
 	});
 
 
 	// 添加新闻
 
-	$('.news_add').click(function () {
-
-		var news_title = $('.news_title').val();
-		var news_upper_title = $('.news_upper_title').val();
-		var news_image = $('.img-polaroid').attr('src');
-		var clicks = $('.clicks').val();
-		var is_show = $('.is_show').find('option:selected').val();
-		var content = $('#myEditor').html();
-	
-		if (isNaN(clicks) || Number(clicks) < 0) {
-			return window.wxc.xcConfirm('点击量必须为非负数字', window.wxc.xcConfirm.typeEnum.error);
+	$('.add').click(function () {
+		var data = {};
+		data.id = parseInt({{$product['id']}});
+		data.title = $(".title").val();
+		data.content = $('#myEditor').html();
+		data.url = '';
+		for (var i=0; i < $(".img-polaroid").length; i++) {
+			data.url += $(".img-polaroid:eq(" + i + ")").attr("src") + ',';
 		}
 
-		if (!news_title) {
-			return window.wxc.xcConfirm('标题必填', window.wxc.xcConfirm.typeEnum.error);
+		if (!data.title) {
+			return window.wxc.xcConfirm('产品名称必填', window.wxc.xcConfirm.typeEnum.error);
 		}
-
-		var send_data = {
-			news_title : news_title,
-			news_upper_title : news_upper_title,
-			news_image : news_image,
-			clicks : clicks,
-			is_show : is_show,
-			content : content,
-		};
-
-		var txt= "确定添加新闻?";
-		var option = {
-			title: "确定添加新闻?",
-			btn: parseInt("0011",2),
-			onOk: function(){
-				LayerShow('');
-				$.post('/admin/news/add/data', send_data, function (data) {
-					LayerHide();
-					if (data.status == 1) {
-						window.wxc.xcConfirm(data.message, window.wxc.xcConfirm.typeEnum.success);
-						setTimeout(function () {
-							window.location.href = '/admin/news';
-						}, 800);
-					} else {
-						return window.wxc.xcConfirm(data.message, window.wxc.xcConfirm.typeEnum.error);
-					}
-
-				})
+		LayerShow('');
+		$.post('/admin/productEdit', data, function (data) {
+			LayerHide();
+			if (data.code == 1) {
+				return window.wxc.xcConfirm(data.msg, window.wxc.xcConfirm.typeEnum.error);
+			} else {
+				window.wxc.xcConfirm(data.msg, window.wxc.xcConfirm.typeEnum.success);
+				setTimeout(function () {
+					window.location.href = '/admin/products';
+				}, 800);
 			}
-		}
-
-		window.wxc.xcConfirm(txt, "custom", option);
+		}, 'json')
 
 	});
 
