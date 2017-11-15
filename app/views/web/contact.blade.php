@@ -2,6 +2,12 @@
         
         
 @section('content')
+<style>
+<!--
+.qrimg{padding-left:20px;width:120px;height:120px;float:left}
+.qrimg img{width:100px;height:100px;}
+-->
+</style>
     <div class="contactbg">
 	    <div class="container animated bounceInUp">
 	    	{{$title->content}}
@@ -39,8 +45,14 @@
     	    	<div class="col-lg-5 col-xs-12 text">
     	    		{{$companyinfo->content}}
     	    	</div>
-    	    	<div class="col-lg-4 col-xs-12">
+    	    	<div class="qrimg">
     	    		<img src="{{$wechatimg->url}}" />
+    	    	</div>
+    	    	<div class="qrimg">
+    	    		<img src="{{$offwebimg->url}}" />
+    	    	</div>
+    	    	<div class="qrimg">
+    	    		<img src="{{$publicimg->url}}" />
     	    	</div>
     	    </div>
     	</div>

@@ -15,8 +15,20 @@ class ContactController extends BaseController
 		$share = CMS::where("cate", 'contact_share')->first();
 		$companyinfo = CMS::where('cate','contact_companyinfo')->first();
 		$wechatimg = CMS::where('cate','contact_wechatimg')->first();
+		$offwebimg = CMS::where('cate','contact_offwebimg')->first();
+		$publicimg = CMS::where('cate','contact_publicimg')->first();
         
-		return View::make('web/contact', compact('nav_active','title','imgs','text','share','companyinfo','wechatimg'));
+		return View::make('web/contact', compact(
+		    'nav_active',
+		    'title',
+		    'imgs',
+		    'text',
+		    'share',
+		    'companyinfo',
+		    'wechatimg',
+		    'offwebimg',
+		    'publicimg'
+		    ));
 		
 		
 // 		$imgs = CMS::where("cate", 'index_img')->get();
