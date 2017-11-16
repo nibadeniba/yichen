@@ -15,6 +15,13 @@
     <a href="#"><i class="fa fa-list-alt"></i><span>产品管理</span></a>
     <ul class="sub-menu">
         <li @if ($action == 'admin/products') class="active" @endif><a href="/admin/products">产品页</a></li>
+        <li @if ($action == 'admin/productAdd') class="active" @endif><a href="/admin/productAdd">产品添加</a></li>
+    </ul>
+
+    <a href="#"><i class="fa fa-list-alt"></i><span>案例管理</span></a>
+    <ul class="sub-menu">
+        <li @if ($action == 'admin/cases') class="active" @endif><a href="/admin/cases">案例页</a></li>
+        <li @if ($action == 'admin/caseAdd') class="active" @endif><a href="/admin/caseAdd">案例添加</a></li>
     </ul>
 </li>
 

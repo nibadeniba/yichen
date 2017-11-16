@@ -57,6 +57,12 @@ Route::group(array('prefix'=>'admin/', 'before' => 'login'), function () {
 	Route::any('productEdit', array('as' => 'admin.productEdit', 'uses' => 'AdminProductController@productEdit'));
 	Route::post('productDel', array('as' => 'admin.productDel', 'uses' => 'AdminProductController@productDel'));
 
+	// 案例管理
+	Route::get('cases', array('as' => 'admin.cases', 'uses' => 'AdminCaseController@cases'));
+	Route::any('caseAdd', array('as' => 'admin.caseAdd', 'uses' => 'AdminCaseController@caseAdd'));
+	Route::any('caseEdit', array('as' => 'admin.caseEdit', 'uses' => 'AdminCaseController@caseEdit'));
+	Route::post('caseDel', array('as' => 'admin.caseDel', 'uses' => 'AdminCaseController@caseDel'));
+
 	// 图片上传
 	Route::post('image/upload', array('as'=>'image.upload', 'uses'=> 'ImageUploadController@imageUpload'));
 });

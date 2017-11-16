@@ -71,7 +71,7 @@
             <div class="content">{{$product['content']}}</div>
             <div id="caa">
                 <p class="demo_functions">
-                    <a href="case" class="cross-link">
+                    <a href="case?product_id={{$product->id}}" class="cross-link">
                         <span class="title11">了解更多案例</span>
                     </a>
                 </p>

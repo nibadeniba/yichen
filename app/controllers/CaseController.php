@@ -7,9 +7,17 @@ class CaseController extends BaseController
 {
 	public function index()
 	{
-		$view_data = array(
-			'nav_active' => 'case',
-		);
-		return View::make('web/case', $view_data);
+		$product_id = Input::get("product_id");
+		$products = CMS::where("cate", "product")->get();
+
+		$select = new Cases;
+		if ($product_id) {
+			$select = $select->where("product_id", $product_id);
+		}
+		$cases = $select->paginate(15);
+
+		$nav_active="case";
+
+		return View::make('web/case', compact("products", "cases", "nav_active", "product_id"));
 	}
 }
