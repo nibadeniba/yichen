@@ -70,16 +70,11 @@ class AdminTalentController extends AdminController
 
 			switch ($act) {
 				case 'add':
-					$talent_id = News::insertGetId($insert_data);
-
+					$talent_id = Talent::insertGetId($insert_data);
 					if (!$talent_id) {
 						throw new Exception("添加失败请重试！");
 					}
-
-					TalentContent::insert(array(
-						'talent_id'=> $news_id,
-						'requirement'=> $requirement,
-					));
+					
 					break;
 				case 'update':
 					$id = Input::get('id');
@@ -88,9 +83,6 @@ class AdminTalentController extends AdminController
 						throw new Exception("ID必要参数错误");
 					}
 					Talent::where('id', $id)->update($insert_data);
-					TalentContent::where('Talent_id', $id)->update(array(
-						'content'=> $content,
-					));
 					break;
 				default:
 					throw new Exception("参数错误");

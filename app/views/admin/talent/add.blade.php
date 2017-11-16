@@ -31,9 +31,7 @@
 		<div class="control-group">
 			<label class="control-label">岗位要求</label>
 			<div class="controls">
-				<textarea class="requirement" value="" style="width: 640px;" placeholder="请填写岗位要求">
-				
-				</textarea>
+				<textarea class="requirement" value="" style="width: 640px;" placeholder="请填写岗位要求"></textarea>
 			</div>
 		</div>
 
@@ -85,9 +83,8 @@
 			talent_name : talent_name,
 			requirement : requirement,
 			is_show : is_show,
-			act : 'update',
+			act : 'add',
 		};
-
 		var txt= "确定添加岗位?";
 		var option = {
 			title: "确定添加岗位?",
@@ -95,6 +92,7 @@
 			onOk: function(){
 				LayerShow('');
 				$.post('/admin/talent/add/data', send_data, function (data) {
+					console.log(data);
 					LayerHide();
 					if (data.status == 1) {
 						window.wxc.xcConfirm(data.message, window.wxc.xcConfirm.typeEnum.success);

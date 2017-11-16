@@ -30,9 +30,7 @@
 		<div class="control-group">
 			<label class="control-label">岗位要求</label>
 			<div class="controls">
-				<textarea class="requirement" value="" style="width: 640px;" placeholder="请填写岗位要求">
-				{{$talent->requirement}}
-				</textarea>
+				<textarea class="requirement" value="" style="width: 640px;" placeholder="请填写岗位要求">{{$talent->requirement}}</textarea>
 			</div>
 		</div>
 
@@ -40,7 +38,7 @@
 			<label class="control-label">是否显示</label>
 			<div class="controls">
 				<select class="is_show">
-					<option @if ($talent->is_show == 1) selected @endif value="1">是</option>
+					<option @if ($talent->is_show == '1') selected @endif value="1">是</option>
 					<option @if ($talent->is_show === '0') selected @endif value="0">否</option>
 				</select>
 			</div>
