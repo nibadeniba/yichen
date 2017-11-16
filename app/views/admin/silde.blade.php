@@ -16,5 +16,11 @@
     <ul class="sub-menu">
         <li @if ($action == 'admin/products') class="active" @endif><a href="/admin/products">产品页</a></li>
     </ul>
+    
+    <a href="#"><i class="fa fa-list-alt"></i><span>岗位管理</span></a>
+    <ul class="sub-menu">
+        <li @if ($action == 'admin/talent') class="active" @endif><a href="/admin/talent">岗位列表</a></li>
+        <li @if ($action == 'admin/talent/add') class="active" @endif><a href="/admin/talent/add">岗位添加</a></li>
+    </ul>
 </li>
 
