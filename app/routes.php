@@ -65,5 +65,10 @@ Route::group(array('prefix'=>'admin/', 'before' => 'login'), function () {
 
 	// 图片上传
 	Route::post('image/upload', array('as'=>'image.upload', 'uses'=> 'ImageUploadController@imageUpload'));
+	
+	// 岗位管理
+	Route::get('talent', array('as'=> 'admin.talent', 'uses' => 'AdminTalentController@talent'));
+	Route::get('talent/add', array('as'=> 'admin.talent.add', 'uses'=> 'AdminTalentController@talentAdd'));
+	Route::get('talent/detail', array('as'=> 'admin.talent.detail', 'uses'=> 'AdminTalentController@talentDetail'));
 });
 

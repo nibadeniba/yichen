@@ -23,5 +23,11 @@
         <li @if ($action == 'admin/cases') class="active" @endif><a href="/admin/cases">案例页</a></li>
         <li @if ($action == 'admin/caseAdd') class="active" @endif><a href="/admin/caseAdd">案例添加</a></li>
     </ul>
+    
+    <a href="#"><i class="fa fa-list-alt"></i><span>岗位管理</span></a>
+    <ul class="sub-menu">
+        <li @if ($action == 'admin/talent') class="active" @endif><a href="/admin/talent">岗位列表</a></li>
+        <li @if ($action == 'admin/talent/add') class="active" @endif><a href="/admin/talent/add">岗位添加</a></li>
+    </ul>
 </li>
 
