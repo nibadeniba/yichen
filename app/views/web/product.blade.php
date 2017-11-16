@@ -1,8 +1,10 @@
 @extends('web.template')
 
 @section('content')
+<link rel="stylesheet" href="css/jPicture.min.css">
+<script src="js/jPicture.min.js"></script>
 <style type="text/css" media="screen">
-    .main{width:1600px;margin:20px auto;}
+    .main{width:50%;margin:20px auto;}
     .facsx8 {
         margin-top: 10px;
         margin-bottom: 10px;
@@ -10,15 +12,16 @@
         color: #805522;
         font-weight: bold;
         font-size: 24px;
-        margin-right: 100px;
         text-align: justify;
     }
     .object {
-        width: 1400px;
-        height: 250px;
+        width: 100%;
+        height:400px;
+        line-height: 400px;
+        overflow: hidden;
     }
     .content {
-        width:1400px;
+        width:100%;
         margin-top:20px;
         margin-bottom:20px;
     }
@@ -54,12 +57,38 @@
 	    	<p>微享 — 不只是朋友圈中的分享</p>
 	    </div>
     </div>
-    @foreach ($products as $product)
-        <div class="main">
+    <div class="row">
+    @foreach ($products as $k => $product)
+        <div class="span6 main">
             <div class="facsx8">{{$product['title']}}</div>
-            <div class="object"></div>
+            <div class="object" id="object{{$k}}">
+                <div>
+                @foreach (explode(',', $product['url']) as $key=>$img)
+                    <div><img src="{{$img}}" width="100%"></div>
+                @endforeach
+                </div>
+            </div>
             <div class="content">{{$product['content']}}</div>
-            <div id="caa"><p class="demo_functions"><a href="case" class="cross-link"><span class="title11">了解更多案例</span></a></p></div>
+            <div id="caa">
+                <p class="demo_functions">
+                    <a href="case" class="cross-link">
+                        <span class="title11">了解更多案例</span>
+                    </a>
+                </p>
+            </div>
+            
         </div>
     @endforeach
+    </div>
+@stop
+
+@section('script')
+<script>
+    $(function(){
+        jPicture(".object", {
+            type: "slide",
+            autoplay: 5000
+        });
+    });
+</script>
 @stop
