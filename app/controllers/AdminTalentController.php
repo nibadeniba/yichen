@@ -50,49 +50,35 @@ class AdminTalentController extends AdminController
 
 	function talentAddData()
 	{
-		$talent_title = Input::get('talent_title');
-		$news_upper_title = Input::get('news_upper_title');
-		$news_image = Input::get('news_image');
-		$clicks = Input::get('clicks');
+		$talent_name = Input::get('talent_name');
+		$requirement = Input::get('requirement');
 		$is_show = Input::get('is_show');
-		$content = Input::get('content');
 
 		$act = Input::get('act', 'add');
 
 		try {
-			if (!$news_title) {
-				throw new Exception("新闻标题不能为空");
+			if (!$talent_name) {
+				throw new Exception("岗位名称不能为空");
 			}
 
-			if (!$news_upper_title) {
-				$news_upper_title = $news_title;
-			}
-
-			if (!is_numeric($clicks) || $clicks < 0) {
-				throw new Exception("点击量必须是非负数字");
-			}
 
 			$insert_data = array(
-				'news_title' => $news_title,
-				'news_upper_title' => $news_upper_title,
-				'news_image' => $news_image,
-				'clicks' => $clicks,
+				'talent_name' => $talent_name,
+				'requirement' => $requirement,
 				'is_show' => $is_show,
-				'created_at' => date('Y-m-d H:i:s'),
 			);
 
 			switch ($act) {
 				case 'add':
-					$news_id = News::insertGetId($insert_data);
+					$talent_id = News::insertGetId($insert_data);
 
-					if (!$news_id) {
+					if (!$talent_id) {
 						throw new Exception("添加失败请重试！");
 					}
 
-					NewsContent::insert(array(
-						'news_id'=> $news_id,
-						'content'=> $content,
-						'created_at' => date('Y-m-d H:i:s'),
+					TalentContent::insert(array(
+						'talent_id'=> $news_id,
+						'requirement'=> $requirement,
 					));
 					break;
 				case 'update':
@@ -101,9 +87,8 @@ class AdminTalentController extends AdminController
 					if (!$id) {
 						throw new Exception("ID必要参数错误");
 					}
-					unset($insert_data['created_at']);
-					News::where('id', $id)->update($insert_data);
-					NewsContent::where('news_id', $id)->update(array(
+					Talent::where('id', $id)->update($insert_data);
+					TalentContent::where('Talent_id', $id)->update(array(
 						'content'=> $content,
 					));
 					break;

@@ -44,7 +44,7 @@
 	@foreach ($talent as $item)
 	<tr style="line-height: 80px;">
 		<td>{{$item->id}}</td>
-		<td>{{$item->position}}</td>
+		<td>{{$item->talent_name}}</td>
 		<td>{{$item->requirement}}</td>
 		<td>
 			@if ($item->is_show)
