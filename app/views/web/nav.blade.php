@@ -17,6 +17,7 @@
                 <li @if ($nav_active == 'case') class="active" @endif><a href="case">案例展示</a></li>
                 <li @if ($nav_active == 'product') class="active" @endif><a href="product">产品领域</a></li>
                 <li @if ($nav_active == 'news') class="active" @endif><a href="/news">新闻动态  </a> </li>
+                <li @if ($nav_active == 'customer') class="active" @endif><a href="customer">合作客户</a></li>
                 <li @if ($nav_active == 'talent') class="active" @endif><a href="talent"> 招贤纳士</a></li>
                 <li @if ($nav_active == 'contact') class="active" @endif><a href="contact">联系我们</a></li>
             </ul>

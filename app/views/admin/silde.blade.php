@@ -29,5 +29,11 @@
         <li @if ($action == 'admin/talent') class="active" @endif><a href="/admin/talent">岗位列表</a></li>
         <li @if ($action == 'admin/talent/add') class="active" @endif><a href="/admin/talent/add">岗位添加</a></li>
     </ul>
+    
+    <a href="#"><i class="fa fa-list-alt"></i><span>客户管理</span></a>
+    <ul class="sub-menu">
+        <li @if ($action == 'admin/customer') class="active" @endif><a href="/admin/customer">客户列表</a></li>
+        <li @if ($action == 'admin/customer/add') class="active" @endif><a href="/admin/customer/add">客户添加</a></li>
+    </ul>
 </li>
 
