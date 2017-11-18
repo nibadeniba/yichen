@@ -8,7 +8,6 @@ class AboutController extends BaseController
 	function about()
 	{
 	    
-	    $title = CMS::where("cate", 'about_title')->first();
 	    $info = CMS::where("cate", 'about_info')->first();
 	    $feature = CMS::where("cate", 'about_feature')->get();
 	    
@@ -17,7 +16,7 @@ class AboutController extends BaseController
 			'nav_active' => 'about',
 		);
 
-		return View::make('web.about', $view_data,compact('title','info','feature'));
+		return View::make('web.about', $view_data,compact('info','feature'));
 	}
 
 }

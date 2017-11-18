@@ -10,7 +10,6 @@ class ContactController extends BaseController
 
 		$nav_active = 'contact';
 		$imgs = CMS::where("cate", 'contact_map')->first();
-		$title = CMS::where("cate", 'contact_title')->first();
 		$text = CMS::where("cate", 'contact_text')->first();
 		$share = CMS::where("cate", 'contact_share')->first();
 		$companyinfo = CMS::where('cate','contact_companyinfo')->first();
@@ -20,7 +19,6 @@ class ContactController extends BaseController
         
 		return View::make('web/contact', compact(
 		    'nav_active',
-		    'title',
 		    'imgs',
 		    'text',
 		    'share',
