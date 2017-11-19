@@ -5,7 +5,6 @@
     <div class="talentbg">
 	    <div class="container animated bounceInUp">
 	    	<h2>招贤纳士</h2>
-	    	<p>无限动力，无限人生——微享邀您一起畅想未来</p>
 	    </div>
     </div>
     <div class="container mt">

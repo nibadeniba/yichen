@@ -4,7 +4,6 @@
     <div class="aboutbg">
 	    <div class="container animated bounceInUp">
 	    	<h2>关于我们</h2>
-	    	<p>永不畏惧创新，高端网站定制，标新立异来自微享您在网络领域超越同行者。</p>
 	    </div>
     </div>
     <!-- 

@@ -35,7 +35,7 @@
     <div class="navbar-header">
      
       <a class="navbar-brand" href="#"><span>管理系统</span></a>
-      <a class="navbar-brand" href="/logout"><span>退出</span></a>
+      <a class="navbar-brand" href="/admin/login"><span>退出</span></a>
     </div>
   </div>
 </div>

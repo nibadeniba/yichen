@@ -11,7 +11,6 @@
     <div class="contactbg">
 	    <div class="container animated bounceInUp">
 	    	<h2>联系我们</h2>
-	    	<p>拥有不一样的高端品牌微信网站，你还在等什么？可以从以下方式联系我们。</p>
 	    </div>
     </div>
     <div class="contact">

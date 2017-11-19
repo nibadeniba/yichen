@@ -14,7 +14,6 @@
 <div class="talentbg">
     <div class="container animated bounceInUp">
     	<h2>合作客户</h2>
-    	<p>这些年我们一起走过，感谢有您，亿臣的伙伴们！</p>
     </div>
 </div>
 
