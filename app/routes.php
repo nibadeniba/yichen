@@ -73,12 +73,14 @@ Route::group(array('prefix'=>'admin/', 'before' => 'login'), function () {
 	Route::get('talent/add', array('as'=> 'admin.talent.add', 'uses'=> 'AdminTalentController@talentAdd'));
 	Route::get('talent/detail', array('as'=> 'admin.talent.detail', 'uses'=> 'AdminTalentController@talentDetail'));
 	Route::post('talent/add/data', array('as'=> 'admin.talent.add.data', 'uses'=> 'AdminTalentController@talentAddData'));
+	Route::post('talentDel', array('as' => 'admin.talentDel', 'uses' => 'AdminTalentController@talentDel'));
 	
 	// 客户管理
 	Route::get('customer', array('as'=> 'admin.customer', 'uses' => 'AdminCustomerController@customer'));
 	Route::get('customer/add', array('as'=> 'admin.customer.add', 'uses'=> 'AdminCustomerController@customerAdd'));
 	Route::get('customer/detail', array('as'=> 'admin.customer.detail', 'uses'=> 'AdminCustomerController@customerDetail'));
 	Route::post('customer/add/data', array('as'=> 'admin.customer.add.data', 'uses'=> 'AdminCustomerController@customerAddData'));
+	Route::post('customerDel', array('as' => 'admin.customerDel', 'uses' => 'AdminCustomerController@customerDel'));
 
 	// 底部
 	Route::any('bottom', array('as' => 'admin.bottom', 'uses' => 'AdminBottomController@bottom'));
@@ -89,6 +91,10 @@ Route::group(array('prefix'=>'admin/', 'before' => 'login'), function () {
 	// 地图
 	Route::any('map', array('as' => 'admin.map', 'uses' => 'AdminMapController@map'));
 
+	// 服务体系
 	Route::any('server', array('as' => 'admin.server', 'uses' => 'AdminServerController@server'));
+	
+	// 关于我们饿
+	Route::any('about', array('as' => 'admin.about', 'uses' => 'AdminAboutController@about'));
 });
 

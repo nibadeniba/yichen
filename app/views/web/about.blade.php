@@ -4,6 +4,7 @@
     <div class="aboutbg">
 	    <div class="container animated bounceInUp">
 	    	<h2>关于我们</h2>
+	    	<p>永不畏惧创新，高端网站定制，标新立异来自微享您在网络领域超越同行者。</p>
 	    </div>
     </div>
     <!-- 
@@ -22,7 +23,8 @@
     	<div class="row about">
     		<div class="col-lg-4 clo-xs-12"><img src="{{$info->url}}"/></div>
     		<div class="col-lg-8 col-xs-12 text">
-        			{{$info->content}}
+    		<h2>{{$info->title}}</h2>
+    		<p>{{$info->content}}</p>
     		</div>
     	</div>
     	<!-- 
@@ -34,7 +36,8 @@
     	   @foreach($feature as $item)
     		<div class="col-lg-4 col-xs-12">
     			<img src="{{$item->url}}" />
-    			{{$item->content}}
+    			<h2>{{$item->title}}</h2>
+    			<p>{{$item->content}}</p>
     		</div>
     		@endforeach
     	</div>

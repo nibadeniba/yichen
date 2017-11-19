@@ -56,6 +56,7 @@
 		</td>
 		<td>
 			<a class="btn btn-primary btn-sm" href="/admin/customer/detail?id={{$item->id}}">编辑客户</a>
+			<span class="btn btn-danger btn-sm del" data-id="{{$item->id}}">删除客户</span>
 		</td>
 	</tr>
 	@endforeach
@@ -65,5 +66,37 @@
 <div class="pagination fr">
 {{$customer->links()}}
 </div>
+
+@stop
+
+@section('script')
+<script type="text/javascript">
+	$(".del").click(function(){
+		var id = $(this).data("id");
+		var txt = "确定删除客户？";
+		var option = {
+			title: "确定删除客户?",
+			btn: parseInt("0011",2),
+			onOk: function(){
+				LayerShow('');
+				$.post('/admin/customerDel', {id: id}, function (data) {
+					LayerHide();
+					if (data.code) {
+						return window.wxc.xcConfirm(data.msg, window.wxc.xcConfirm.typeEnum.error);
+					} else {
+						window.wxc.xcConfirm("删除成功", window.wxc.xcConfirm.typeEnum.success);
+						setTimeout(function () {
+							location.reload();
+						}, 800);
+						
+					}
+
+				}, 'json')
+			}
+		}
+
+		window.wxc.xcConfirm(txt, "custom", option);
+	});
+</script>
 
 @stop

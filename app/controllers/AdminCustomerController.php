@@ -95,4 +95,14 @@ class AdminCustomerController extends AdminController
 			return Response::json(array('status'=> 0, 'message'=> $e->getMessage()));
 		}
 	}
+	
+	
+	public function customerDel()
+	{
+	    $id = Input::get("id");
+	    if(Customer::where("id", $id)->delete()){
+	        return $this->ajaxReturn("", "删除成功", 0);
+	    }
+	    return $this->ajaxReturn("", "删除失败", 1);
+	}
 }

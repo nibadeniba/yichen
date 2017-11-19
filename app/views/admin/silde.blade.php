@@ -15,6 +15,13 @@
 </li>
 
 <li>
+    <a href="#"><i class="fa fa-list-alt"></i><span>关于我们管理</span></a>
+    <ul class="sub-menu">
+        <li @if ($action == 'admin/about') class="active" @endif><a href="/admin/about">关于我们</a></li>
+    </ul>
+</li>
+
+<li>
     <a href="#"><i class="fa fa-list-alt"></i><span>案例管理</span></a>
     <ul class="sub-menu">
         <li @if ($action == 'admin/cases') class="active" @endif><a href="/admin/cases">案例页</a></li>

@@ -96,4 +96,13 @@ class AdminTalentController extends AdminController
 			return Response::json(array('status'=> 0, 'message'=> $e->getMessage()));
 		}
 	}
+
+	public function talentDel()
+	{
+	    $id = Input::get("id");
+	    if(Talent::where("id", $id)->delete()){
+	        return $this->ajaxReturn("", "删除成功", 0);
+	    }
+	    return $this->ajaxReturn("", "删除失败", 1);
+	}
 }
