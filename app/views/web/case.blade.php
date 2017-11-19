@@ -42,7 +42,7 @@
 			@foreach ($cases as $item)
 				<div class="col-lg-3 col-xs-12 casepic">
 					<div class="recent-work-wrap">
-			        	<img class="img-responsive" src="{{$item->img}}">
+			        	<img class="img-responsive" src="{{$item->img}}" style="width:260px;height:180px">
 			        </div>
 				</div>
 			@endforeach
@@ -55,7 +55,7 @@
 		<span class="modal_close">X</span>
 		<div class="poster-main">
 		@foreach ($cases as $item)
-			<img src="{{$item->img}}">
+			<img src="{{$item->img}}"  width="260" height="180">
 		@endforeach
 		</div>
 	</div>

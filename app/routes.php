@@ -82,5 +82,13 @@ Route::group(array('prefix'=>'admin/', 'before' => 'login'), function () {
 
 	// 底部
 	Route::any('bottom', array('as' => 'admin.bottom', 'uses' => 'AdminBottomController@bottom'));
+
+	// 在线
+	Route::any('line', array('as' => 'admin.line', 'uses' => 'AdminLineController@line'));
+
+	// 地图
+	Route::any('map', array('as' => 'admin.map', 'uses' => 'AdminMapController@map'));
+
+	Route::any('server', array('as' => 'admin.server', 'uses' => 'AdminServerController@server'));
 });
 

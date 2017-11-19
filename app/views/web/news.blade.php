@@ -6,15 +6,7 @@
 	    	<h2>新闻资讯</h2>
 	    </div>
     </div>
-     <div class="newnav">
-    	<div class="container">
-    		<div class="row">
-    			<div class="col-lg-1 col-xs-3"><a href="about.html" class="current">最新资讯</a></div>
-    			<div class="col-lg-1 col-xs-3"><a href="">网站动态</a></div>
-    			<div class="col-lg-1 col-xs-3"><a href="">帮助中心</a></div>
-    		</div>
-    	</div>
-    </div>
+
     <div class="newlist" style="min-height: 350px;">
     	<div class="container">
     		@foreach ($news as $item)

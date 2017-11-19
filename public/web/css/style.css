@@ -185,7 +185,7 @@ transition: all 1.2s;}
 .main4 .text{padding: 10px 0; float: left; width: 78%; margin-left: 2%;}
 .main4 .text p{ font-size: 12px; line-height: 15px; color: #666; margin-top: 5px;}
 .main4 .text h2{ font-size: 16px;overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
-.main5{ background:url(../images/map.jpg) no-repeat; background-size: cover; padding: 30px 0; }
+.main5{ background-color: #445e81; background-size: cover; padding: 30px 0; }
 .main5 .text{ text-align: center; color: #fff; font-size: 16px; margin-top: 15px; }
 .main5 .text a{ color: #fff;}
 .main5 .text p{line-height: 40px;}

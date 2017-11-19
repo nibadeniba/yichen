@@ -13,6 +13,8 @@ class IndexController extends BaseController
 
 		$nav_active = 'index';
 
-		return View::make('web/index', compact('nav_active', "imgs", "cards", "text"));
+		$bottom_info = CMS::where('cate', 'bottom')->first();
+
+		return View::make('web/index', compact('nav_active', "imgs", "cards", "text", 'bottom_info'));
 	}
 }

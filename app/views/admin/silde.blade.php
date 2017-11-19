@@ -8,10 +8,17 @@
 </li>
 
 <li>
-	<a href="#"><i class="fa fa-list-alt"></i><span>新闻管理</span></a>
+    <a href="#"><i class="fa fa-list-alt"></i><span>服务体系管理</span></a>
     <ul class="sub-menu">
-        <li @if ($action == 'admin/news') class="active" @endif><a href="/admin/news">新闻页</a></li>
-        <li @if ($action == 'admin/news/add') class="active" @endif><a href="/admin/news/add">新闻添加</a></li>
+        <li @if ($action == 'admin/server') class="active" @endif><a href="/admin/server">服务体系</a></li>
+    </ul>
+</li>
+
+<li>
+    <a href="#"><i class="fa fa-list-alt"></i><span>案例管理</span></a>
+    <ul class="sub-menu">
+        <li @if ($action == 'admin/cases') class="active" @endif><a href="/admin/cases">案例页</a></li>
+        <li @if ($action == 'admin/caseAdd') class="active" @endif><a href="/admin/caseAdd">案例添加</a></li>
     </ul>
 </li>
 
@@ -24,12 +31,13 @@
 </li>
 
 <li>
-    <a href="#"><i class="fa fa-list-alt"></i><span>案例管理</span></a>
+	<a href="#"><i class="fa fa-list-alt"></i><span>新闻管理</span></a>
     <ul class="sub-menu">
-        <li @if ($action == 'admin/cases') class="active" @endif><a href="/admin/cases">案例页</a></li>
-        <li @if ($action == 'admin/caseAdd') class="active" @endif><a href="/admin/caseAdd">案例添加</a></li>
+        <li @if ($action == 'admin/news') class="active" @endif><a href="/admin/news">新闻页</a></li>
+        <li @if ($action == 'admin/news/add') class="active" @endif><a href="/admin/news/add">新闻添加</a></li>
     </ul>
 </li>
+
     
 <li>
     <a href="#"><i class="fa fa-list-alt"></i><span>岗位管理</span></a>
@@ -37,7 +45,7 @@
         <li @if ($action == 'admin/talent') class="active" @endif><a href="/admin/talent">岗位列表</a></li>
         <li @if ($action == 'admin/talent/add') class="active" @endif><a href="/admin/talent/add">岗位添加</a></li>
     </ul>
-<li>
+</li>
     
 <li>
     <a href="#"><i class="fa fa-list-alt"></i><span>客户管理</span></a>
@@ -48,9 +56,23 @@
 </li>
 
 <li>
+    <a href="#"><i class="fa fa-list-alt"></i><span>联系我们管理</span></a>
+    <ul class="sub-menu">
+        <li @if ($action == 'admin/map') class="active" @endif><a href="/admin/map">联系我们</a></li>
+    </ul>
+</li>
+
+<li>
     <a href="#"><i class="fa fa-list-alt"></i><span>网站底部管理</span></a>
     <ul class="sub-menu">
         <li @if ($action == 'admin/bottom') class="active" @endif><a href="/admin/bottom">底部内容</a></li>
+    </ul>
+</li>
+
+<li>
+    <a href="#"><i class="fa fa-list-alt"></i><span>在线联系管理</span></a>
+    <ul class="sub-menu">
+        <li @if ($action == 'admin/line') class="active" @endif><a href="/admin/line">在线联系</a></li>
     </ul>
 </li>
 

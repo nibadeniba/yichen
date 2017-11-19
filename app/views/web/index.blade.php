@@ -38,7 +38,7 @@
 				</div>
 			</div>
 			<div class="container mt">
-				<p>{{$text->title}}</p>
+				<p style="color: white;">{{$text->title}}</p>
 				<div class="row company">
 		    		<div class="col-lg-12 col-xs-12 text">
 		    			<p>{{$text->content}}</p>
@@ -49,7 +49,7 @@
 		</div>
 
 		<div id="index_foot" style="position: absoulte; width: 100%; text-align: center; padding: 10px;" >
-	    	<p>Copyright © 2003-2016  广州澳新考拉信息技术有限公司  All Rights Reserved　浙ICP备15002503号　</p>
+	    	<p>{{$bottom_info->content}}</p>
 	    </div>
     </div>
 

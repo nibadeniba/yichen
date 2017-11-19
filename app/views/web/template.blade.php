@@ -2,9 +2,9 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>微享，不只是朋友圈中的分享</title>
-		<meta name="keywords" content="微信商城，网站制作" />
-		<meta name="description" content="微享，不只是朋友圈中的分享" />
+		<title>九圣家具</title>
+		<meta name="keywords" content="九圣家具" />
+		<meta name="description" content="九圣家具" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="/web/css/animate.min.css" type="text/css" />
 		<link rel="stylesheet" href="/web/css/bootstrap.css" type="text/css" />
@@ -20,9 +20,22 @@
 		@include('web/nav')
 
 		@yield('content')
-
+		<?php $bottom = CMS::where("cate", "bottom")->first();?>
+		<div class="main5 mt">
+	    	<div class="container">
+	    		<div class="row">
+	    			<div class="col-lg-6 col-xs-12 text">
+	    				<p>{{$bottom->title}}</p>
+	    			</div>
+	    			<div class="col-lg-6 col-xs-12 photo">
+	    				<p class="att">关注我们</p>
+	    				<img src="{{$bottom->url}}" />
+	    			</div>
+	    		</div>
+	    	</div>
+	    </div>
 		<div class="copyright1">
-			<?php $bottom = CMS::where("cate", "bottom")->first();?>
+			
 	    	<p>{{$bottom->content}}</p>
 	    </div>
 

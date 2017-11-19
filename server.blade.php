@@ -1,46 +1,49 @@
 @extends('admin.template')
 
 @section('content')
-<link href="/js/umeditor1.2.3/themes/default/css/umeditor.css" type="text/css" rel="stylesheet">
-
 <style type="text/css" media="screen">
 	.remove{position: absolute;}
 </style>
 <div class="page-head">
- 	<h2>网页底部管理</h2>
+ 	<h2>案例管理</h2>
  	<ol class="breadcrumb">
-    	<li><a href="#">网页底部</a></li>
-    	<li class="active">网页底部修改</li>
+    	<li><a href="#">案例</a></li>
+    	<li class="active">案例添加</li>
   	</ol>
 </div>
 
 <div class="row page-head">
 	<div class="form-horizontal" id="news">
 		<div class="control-group">
-			<label class="control-label order_num" style="font-size: 20px;">修改网页底部</label>
+			<label class="control-label order_num" style="font-size: 20px;">添加案例</label>
 		</div>
 
 		<div class="control-group">
-			<label class="control-label">底部左侧显示文字</label>
+			<label class="control-label">案例名</label>
 			<div class="controls">
-				<input type="text" id="bottom_title" style="width: 640px;" value="{{$bottom['title']}}">
-			</div>
-		</div>
-
-		<!-- 富文本编辑 -->
-		<div class="control-group">
-			<label class="control-label">底部编辑</label>
-			<div class="controls">
-				<input type="text" id="bottom_content" style="width: 640px;" value="{{$bottom['content']}}">
+				<input type="text" class="name" style="width: 640px;" placeholder="填写案例名">
 			</div>
 		</div>
 
 		<div class="control-group">
-			<label class="control-label">底部联系图片</label>
+			<label class="control-label" for="inputEmail">所属产品</label>
+			<div class="controls">
+				<select name="product_id" class="product_id" style="width: 120px;">
+					<option value="">请选择</option>
+				@foreach ($products as $item)
+					<option value="{{$item['id']}}">{{$item['title']}}</option>
+				@endforeach
+				</select>
+			</div>
+		</div>
+		
+		<div class="control-group">
+			<label class="control-label">图片上传</label>
 			<div class="controls">
 				<form class="upload_from" enctype="multipart/form-data">
 					<input type="file" name="img" class="file_upload">
 					<input type="button" value="上传" class="btn btn-info u_btn">
+					<span style="color: red">160 * 160 效果最佳 不传图片为一张蓝底背景图</span>
 				</form>
 				
 			</div>
@@ -49,14 +52,14 @@
 		<div class="control-group">
 			<label class="control-label">图片</label>
 			<div class="controls">
-				<img src="{{$bottom['url']}}" id="url"  class="img-polaroid">
+				<img src="/web/wu.jpg" width="160" height="16" class="img-polaroid">
 			</div>
 		</div>
-
+		
 		<div class="control-group">
 			<label class="control-label" for=""></label>
 			<div class="controls">
-				<input type="button" class="add btn btn-primary" value="修改底部">
+				<input type="button" class="add btn btn-primary" value="添加案例">
 			</div>
 		</div>
 
@@ -67,6 +70,7 @@
 
 @section('script')
 <script type="text/javascript">
+
 	$('.u_btn').click(function () {
 
 		var file = $('.file_upload')
@@ -94,29 +98,27 @@
 
 	});
 
+
 	// 添加新闻
 
 	$('.add').click(function () {
 		var data = {};
-		data.id = {{$bottom->id}}
-		data.content = $('#bottom_content').val();
-		data.title = $('#bottom_title').val();
-		data.url = $('#url').attr('src');
+		data.name = $(".name").val();
+		data.product_id = $(".product_id").val();
+		data.img = $('.img-polaroid').attr('src');
 
-		if (!data.content) {
-			return window.wxc.xcConfirm('底部内容必填', window.wxc.xcConfirm.typeEnum.error);
+		if (!data.name) {
+			return window.wxc.xcConfirm('案例名称必填', window.wxc.xcConfirm.typeEnum.error);
 		}
-
-
 		LayerShow('');
-		$.post('/admin/bottom', data, function (data) {
+		$.post('/admin/caseAdd', data, function (data) {
 			LayerHide();
 			if (data.code == 1) {
 				return window.wxc.xcConfirm(data.msg, window.wxc.xcConfirm.typeEnum.error);
 			} else {
 				window.wxc.xcConfirm(data.msg, window.wxc.xcConfirm.typeEnum.success);
 				setTimeout(function () {
-					window.location.href = '/admin/bottom';
+					window.location.href = '/admin/cases';
 				}, 800);
 			}
 		}, 'json')

@@ -16,8 +16,10 @@ class AdminBottomController extends AdminController
 		if ($this->isPOST()) {
 			$id= Input::get("id");
 			$content = Input::get("content");
+			$title = Input::get('title');
+			$url = Input::get('url');
 
-			if(CMS::where("id", $id)->update(compact("content"))) {
+			if(CMS::where("id", $id)->update(compact("content", "title", "url"))) {
 				return $this->ajaxReturn("", "修改成功", 0);
 			}
 			return $this->ajaxReturn("", "修改失败", 1);

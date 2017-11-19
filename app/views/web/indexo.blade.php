@@ -35,25 +35,9 @@
            <h2>服务流程  </h2>
     	   <div class="container" style="background: #1A2A41;width:700px;margin:0 auto;">
     	       <div>
-    				<img src="/web/images/s.png" style="align:center"/>
+    				<img src="{{$pool->url}}" style="align:center"/>
     			</div>
     		</div>
 		</div>
 	</div>
-	
-    <div class="main5 mt">
-    	<div class="container">
-    		<div class="row">
-    			<div class="col-lg-6 col-xs-12 text">
-    				<p>浙江亿臣家具有限公司 </p>
-					<p>地址：湖州市德清县雷甸镇白云南路397号</p>
-					<p>电话：0572-8378017</p>
-    			</div>
-    			<div class="col-lg-6 col-xs-12 photo">
-    				<p class="att">关注我们</p>
-    				<img src="/web/images/wx.png" />
-    			</div>
-    		</div>
-    	</div>
-    </div>
 @stop
