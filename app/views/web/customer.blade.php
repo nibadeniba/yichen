@@ -7,6 +7,8 @@
 .customer_type span{font-size:20px;font-weight:bold}
 .customer_list ul{position:relative}
 .customer_list li{width:30%;}
+
+.customer_item{position: relative;padding-left: 15px;float:left;width:33.33333%}
 -->
 </style>
 <div class="talentbg">
@@ -16,46 +18,53 @@
     </div>
 </div>
 
-<div class="cstate_customer">
-	<div class="customer_type">
+<div class="container">
+    <div class="customer_type">
 		<span>地产企业（排名不分先后）</span>
 	</div>
-	<div class="customer_list">
-		<ul>
-			@foreach ($customerb as $item)
-			<li>{{$item->customer_name}}</li>
-			@endforeach
-			<li>...</li>
-		</ul>
+	<div class="row">
+	     @foreach ($customera as $item)
+	     <div class="customer_item">
+	     	<span>{{$item->customer_name}}</span>
+	     </div>
+	     @endforeach
+	     <div class="customer_item">
+	     	<span>...</span>
+	     </div>
 	</div>
 </div>
 
-<div class="cstate_customer">
-	<div class="customer_type">
+<div class="container">
+    <div class="customer_type">
 		<span>酒店管理公司（排名不分先后）</span>
 	</div>
-	<div class="customer_list">
-		<ul>
-			@foreach ($customerc as $item)
-			<li>{{$item->customer_name}}</li>
-			@endforeach
-			<li>...</li>
-		</ul>
+	<div class="row">
+	     @foreach ($customerb as $item)
+	     <div class="customer_item">
+	     	<span>{{$item->customer_name}}</span>
+	     </div>
+	     @endforeach
+	     <div class="customer_item">
+	     	<span>...</span>
+	     </div>
 	</div>
 </div>
 
-<div class="cstate_customer">
-	<div class="customer_type">
-		<span>设计公司</span>
+
+<div class="container">
+    <div class="customer_type">
+		<span>设计公司（排名不分先后）</span>
 	</div>
-	<div class="customer_list">
-		<ul>
-			@foreach ($customera as $item)
-			<li>{{$item->customer_name}}</li>
-			@endforeach
-			<li>...</li>
-		</ul>
+	<div class="row">
+	     @foreach ($customerc as $item)
+	     <div class="customer_item">
+	     	<span>{{$item->customer_name}}</span>
+	     </div>
+	     @endforeach
+	     <div class="customer_item">
+	     	<span>...</span>
+	     </div>
 	</div>
 </div>
-
+    
 @stop
