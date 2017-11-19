@@ -31,6 +31,8 @@ Route::get('talent', array('as' => 'talent', 'uses' => 'TalentController@talent'
 
 Route::get('contact', array('as' => 'contact', 'uses' => 'ContactController@contact'));
 
+Route::get('customer', array('as' => 'customer', 'uses' => 'CustomerController@customer'));
+
 Route::any('admin/login', array('as' => 'admin.login', 'uses' => 'AdminController@login'));
 
 Route::group(array('prefix'=>'admin/', 'before' => 'login'), function () {
