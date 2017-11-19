@@ -7,9 +7,9 @@ class IndexoController extends BaseController
 {
 	function indexo()
 	{	
-		$view_data = array(
-			'nav_active' => 'indexo',
-		);
-		return View::make('web/indexo', $view_data);
+	    $nav_active = 'indexo';
+	    $teams = CMS::where("cate", 'indexo_team')->get();
+	    
+	    return View::make('web/indexo', compact('nav_active','teams'));
 	}
 }

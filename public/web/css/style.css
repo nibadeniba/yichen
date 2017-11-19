@@ -139,6 +139,9 @@ p {line-height: 22px}
 .probg{ margin-top: 20px; width: 100%; background:url(../images/service-bg.jpg) 50% 0 no-repeat; background-attachment: fixed ; height: 400px;}
 .probg  h2 { font-size: 50px; margin: 0;  font-weight: 100; color: #fff; padding-top: 200px;}
 .probg p{ font-size: 20px; color: #fff; margin-top: 15px;}
+.indexobg{ margin-bottom: 35px; margin-top: 20px; width: 100%; background:url(../images/home-bg.jpg) 50% 0 no-repeat; background-attachment: fixed ; height: 400px;}
+.indexobg  h2 { font-size: 50px; margin: 0;  font-weight: 100; color: #fff; padding-top: 200px;}
+.indexobg p{ font-size: 20px; color: #fff; margin-top: 15px;}
 .newnav{ border-bottom: 1px solid #ddd; line-height: 50px;}
 .newnav .current{ color: #fa8557;}
 .about{ padding-top: 15px;}

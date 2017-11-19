@@ -31,6 +31,8 @@ Route::get('talent', array('as' => 'talent', 'uses' => 'TalentController@talent'
 
 Route::get('contact', array('as' => 'contact', 'uses' => 'ContactController@contact'));
 
+Route::get('customer', array('as' => 'customer', 'uses' => 'CustomerController@customer'));
+
 Route::any('admin/login', array('as' => 'admin.login', 'uses' => 'AdminController@login'));
 
 Route::group(array('prefix'=>'admin/', 'before' => 'login'), function () {
@@ -70,5 +72,12 @@ Route::group(array('prefix'=>'admin/', 'before' => 'login'), function () {
 	Route::get('talent', array('as'=> 'admin.talent', 'uses' => 'AdminTalentController@talent'));
 	Route::get('talent/add', array('as'=> 'admin.talent.add', 'uses'=> 'AdminTalentController@talentAdd'));
 	Route::get('talent/detail', array('as'=> 'admin.talent.detail', 'uses'=> 'AdminTalentController@talentDetail'));
+	Route::post('talent/add/data', array('as'=> 'admin.talent.add.data', 'uses'=> 'AdminTalentController@talentAddData'));
+	
+	// 客户管理
+	Route::get('customer', array('as'=> 'admin.customer', 'uses' => 'AdminCustomerController@customer'));
+	Route::get('customer/add', array('as'=> 'admin.customer.add', 'uses'=> 'AdminCustomerController@customerAdd'));
+	Route::get('customer/detail', array('as'=> 'admin.customer.detail', 'uses'=> 'AdminCustomerController@customerDetail'));
+	Route::post('customer/add/data', array('as'=> 'admin.customer.add.data', 'uses'=> 'AdminCustomerController@customerAddData'));
 });
 
