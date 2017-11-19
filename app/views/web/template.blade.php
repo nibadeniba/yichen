@@ -22,7 +22,8 @@
 		@yield('content')
 
 		<div class="copyright1">
-	    	<p>Copyright © 2003-2016  广州澳新考拉信息技术有限公司  All Rights Reserved　浙ICP备15002503号　</p>
+			<?php $bottom = CMS::where("cate", "bottom")->first();?>
+	    	<p>{{$bottom->content}}</p>
 	    </div>
 
 	    @include('web/QQ')

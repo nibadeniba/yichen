@@ -79,5 +79,8 @@ Route::group(array('prefix'=>'admin/', 'before' => 'login'), function () {
 	Route::get('customer/add', array('as'=> 'admin.customer.add', 'uses'=> 'AdminCustomerController@customerAdd'));
 	Route::get('customer/detail', array('as'=> 'admin.customer.detail', 'uses'=> 'AdminCustomerController@customerDetail'));
 	Route::post('customer/add/data', array('as'=> 'admin.customer.add.data', 'uses'=> 'AdminCustomerController@customerAddData'));
+
+	// 底部
+	Route::any('bottom', array('as' => 'admin.bottom', 'uses' => 'AdminBottomController@bottom'));
 });
 
