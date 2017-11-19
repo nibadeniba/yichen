@@ -53,8 +53,7 @@
 </style>
     <div class="probg">
 	    <div class="container animated bounceInUp">
-	    	<h2>微享产品</h2>
-	    	<p>微享 — 不只是朋友圈中的分享</p>
+	    	<h2>九圣产品</h2>
 	    </div>
     </div>
     <div class="row">

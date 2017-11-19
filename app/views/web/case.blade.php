@@ -1,11 +1,30 @@
 @extends('web.template')
 
 @section('content')
-	<script src="./js/postbird-img-glass.js"></script>
+	<style type="text/css">
+		.img_modal{
+			width:100%;
+			height:100%;
+			background: rgba(0,0,0,0.3);
+			position: absolute;
+			top:0px;
+			z-index:1000;
+		}
+		.poster-list{
+			margin:400px auto;
+		}
+		.modal_close{
+			float: right;
+			margin:300px 600px;
+			font-size:20px;
+			color:red;
+			cursor:pointer;
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="css/poster.css">
     <div class="casebg">
 	    <div class="container animated bounceInUp">
 	    	<h2>案例展示</h2>
-	    	<p>力求视觉与交互的完美契合，以规范的流程和专注的态度，为您提供全方位的设计服务。</p>
 	    </div>
     </div>
     <div class="newnav">
@@ -23,12 +42,7 @@
 			@foreach ($cases as $item)
 				<div class="col-lg-3 col-xs-12 casepic">
 					<div class="recent-work-wrap">
-			          <img class="img-responsive" src="{{$item->img}}" alt="">
-			          <div class="overlay">
-				            <div class="recent-work-inner">
-				              <h3>{{$item->name}}</h3>
-				            </div>
-			          </div>
+			        	<img class="img-responsive" src="{{$item->img}}">
 			        </div>
 				</div>
 			@endforeach
@@ -37,19 +51,33 @@
 	<nav class="pages">
 		 {{$cases->links()}}
 	</nav>
+	<div class="img_modal hidden">
+		<span class="modal_close">X</span>
+		<div class="poster-main">
+		@foreach ($cases as $item)
+			<img src="{{$item->img}}">
+		@endforeach
+		</div>
+	</div>
 @stop
 
 @section("script")
+<script src="js/poster.js"></script>
 <script>
-$(function(){
-    PostbirdImgGlass.init({
-        domSelector:".img-responsive",
-        animation:true
+jQuery(document).ready(function($) {
+    var setting = {
+        "width":900,
+        "height":234,
+    };
+    Poster.init($(".poster-main"),setting);
+
+    $(".img-responsive").click(function(){
+    	$(".img_modal").removeClass('hidden');
     });
 
-    $(".overlay").click(function(){
-    	$(".img-responsive").click();
-    })
+    $(".modal_close").click(function(){
+		$(".img_modal").addClass("hidden");
+	});
 });
 </script>
 @stop
