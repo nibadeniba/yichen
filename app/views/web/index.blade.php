@@ -17,7 +17,7 @@
 @endforeach
     <div class="section" style="position: relative">
     	<div class="main m-banner">
-			<a class="u-btn u-btn-solid" style="margin-bottom: 16px;" href="" hideFocus="true">立即了解</a>
+			<a class="u-btn u-btn-solid" style="margin-bottom: 16px;" href="/about" hideFocus="true">立即了解</a>
 			<div class="container">
 				<div class="row">
 				@foreach ($cards as $card)
