@@ -14,7 +14,7 @@ class CaseController extends BaseController
 		if ($product_id) {
 			$select = $select->where("product_id", $product_id);
 		}
-		$cases = $select->paginate(15);
+		$cases = $select->paginate(16);
 
 		$nav_active="case";
 
