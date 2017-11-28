@@ -81,7 +81,7 @@
 		@elseif ($key == 1)
 		<div class="anm" style="width: 500px; color: white; font-size: 60px; font-weight: 500; text-decoration: none ; position: absolute; top: 300px;">卓越品质的缔造者</div>
 		@elseif ($key == 2)
-		<div class="anm" style="color: white; font-size: 60px; font-weight: 500; text-decoration: none ; position: absolute; top: 400px;">智能化、信息化管理</div>
+		<div class="anm" style="color: white; font-size: 60px; font-weight: 500; text-decoration: none ; position: absolute; top: 300px;">诚信为本，尽善尽类</div>
 		@elseif ($key == 3)
 		<div class="anm" style="color: white; font-size: 60px; font-weight: 500; text-decoration: none ; position: absolute; left: 1000px;">智能化、信息化管理</div>
 		@endif
