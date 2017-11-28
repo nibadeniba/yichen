@@ -25,7 +25,7 @@
 			display: block;
 		}
 		to {
-			left: 300px;
+			left: 200px;
 		}
 	}
 
