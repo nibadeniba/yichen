@@ -229,7 +229,10 @@
 					<p>招贤纳士</p>
 					<a >职位需求</a>
 				</div>
-				
+				<div class="rxfw">
+					<p class="s1">{{$bottom->title}}</p>
+					<p class="s2"><img src="{{$bottom->url}}"></p>
+				</div>
 			</div>
 		</div>
 	    @include('web/QQ')
