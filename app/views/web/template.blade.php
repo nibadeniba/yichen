@@ -161,6 +161,7 @@
 
 		@yield('content')
 		<?php $bottom = CMS::where("cate", "bottom")->first();?>
+		<?php $products = CMS::where("cate", 'product')->get();?>
 		<!-- <div class="main5 mt">
 	    	<div class="container">
 	    		<div class="row">
@@ -201,13 +202,17 @@
 					<div class="footabout">
 						<p>案例展示</p>
 						<ul class="clearfix">
-							<li><a >案例展示</a></li>
+						@foreach ($products as $p)
+							<li><a >{{$p->title}}</a></li>
+						@endforeach
 						</ul>
 					</div>
 					<div class="footjob">
 						<p>产品领域</p>
 						<ul>
-							<li><a >产品领域</a></li> 
+						@foreach ($products as $p)
+							<li><a >{{$p->title}}</a></li>
+						@endforeach
 						</ul>
 					</div>
 				</div>
