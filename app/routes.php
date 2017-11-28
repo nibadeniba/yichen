@@ -96,5 +96,6 @@ Route::group(array('prefix'=>'admin/', 'before' => 'login'), function () {
 	
 	// 关于我们饿
 	Route::any('about', array('as' => 'admin.about', 'uses' => 'AdminAboutController@about'));
+	Route::any('aboutMiddle', array('as' => 'admin.aboutMiddle', 'uses' => 'AdminAboutController@aboutMiddle'));
 });
 

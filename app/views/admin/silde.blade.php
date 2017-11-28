@@ -18,6 +18,7 @@
     <a href="#"><i class="fa fa-list-alt"></i><span>关于我们管理</span></a>
     <ul class="sub-menu">
         <li @if ($action == 'admin/about') class="active" @endif><a href="/admin/about">关于我们</a></li>
+        <li @if ($action == 'admin/aboutMiddle') class="active" @endif><a href="/admin/aboutMiddle">荣誉墙</a></li>
     </ul>
 </li>
 

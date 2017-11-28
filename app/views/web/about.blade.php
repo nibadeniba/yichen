@@ -20,11 +20,19 @@
      -->
     <div class="container">
     	<div class="row about">
-    		<div class="col-lg-4 clo-xs-12"><img src="{{$info->url}}"/></div>
-    		<div class="col-lg-8 col-xs-12 text">
+    		<div class="col-lg-12 clo-xs-12"><img src="{{$info->url}}"/></div>
+    		<div class="col-lg-12 col-xs-12 text">
     		<h2>{{$info->title}}</h2>
     		<p>{{$info->content}}</p>
     		</div>
+            <div class="col-lg-12 col-xs-12 text">
+            <h2>{{$middle->title}}</h2>
+            @foreach(explode(',', $middle['url']) as $img)
+            <div class="col-lg-2 col-xs-12">
+                <img src="{{$img}}" />
+            </div>
+            @endforeach
+            </div>
     	</div>
     	<!-- 
     	<div class="row wenben">
