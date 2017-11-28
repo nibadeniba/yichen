@@ -157,7 +157,7 @@
 			    width: 97px;
 			    height: 112px;
 			    position: absolute;
-			    left: 1800px;
+			    left: 1700px;
 			    top: 300px;
 			}
 		</style>
