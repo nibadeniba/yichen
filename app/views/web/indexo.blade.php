@@ -5,7 +5,10 @@
 <style>
 .title14{font-size:20px;color:#ffffff}
 </style>
-    <div class="indexobg">
+    <div class="indexobg" style="background: url(/web/images/bg2.jpg) 50% no-repeat">
+        <div class="logo">
+            <img src="/web/images/logo.png">
+        </div>
 	    <div class="container animated bounceInUp">
 	    <h2>服务体系</h2>
 	    </div>

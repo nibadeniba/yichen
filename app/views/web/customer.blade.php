@@ -1,17 +1,20 @@
 @extends('web/template') 
 
 @section('content')
-<<style>
-<!--
+<style>
+
 .cstate_customer{width:600px;margin:0 auto;padding-bottom:30px}
 .customer_type span{font-size:20px;font-weight:bold}
 .customer_list ul{position:relative}
 .customer_list li{width:30%;}
 
 .customer_item{position: relative;padding-left: 15px;float:left;width:33.33333%}
--->
+
 </style>
-<div class="talentbg">
+<div class="talentbg" style="background: url(/web/images/bg6.jpg) 50% no-repeat">
+	<div class="logo">
+            <img src="/web/images/logo.png">
+        </div>
     <div class="container animated bounceInUp">
     	<h2>合作客户</h2>
     </div>

@@ -121,25 +121,25 @@ p {line-height: 22px}
 		transform: scale(1);
 	}
 }
-.aboutbg{ margin-top: 20px; width: 100%; background: url(../images/about-bg.jpg) 50% 0 no-repeat; background-attachment: fixed ; height: 400px;}
+.aboutbg{ margin-top: 20px; width: 100%;  background-attachment: fixed ; height: 400px;}
 .aboutbg  h2 { font-size: 50px; margin: 0;  font-weight: 100; color: #fff; padding-top: 200px;}
 .aboutbg p{ font-size: 20px; color: #fff; margin-top: 15px;}
-.contactbg{ margin-top: 20px; width: 100%; background:url(../images/banner.jpg) 50% 0 no-repeat; background-attachment: fixed ; height: 400px;}
+.contactbg{ margin-top: 20px; width: 100%;  background-attachment: fixed ; height: 400px;}
 .contactbg  h2 { font-size: 50px; margin: 0;  font-weight: 100; color: #fff; padding-top: 200px;}
 .contactbg p{ font-size: 20px; color: #fff; margin-top: 15px;}
-.talentbg{ margin-bottom: 35px; margin-top: 20px; width: 100%; background:url(../images/home-bg.jpg) 50% 0 no-repeat; background-attachment: fixed ; height: 400px;}
+.talentbg{ margin-bottom: 35px; margin-top: 20px; width: 100%;  background-attachment: fixed ; height: 400px;}
 .talentbg  h2 { font-size: 50px; margin: 0;  font-weight: 100; color: #fff; padding-top: 200px;}
 .talentbg p{ font-size: 20px; color: #fff; margin-top: 15px;}
-.newbg{ margin-top: 20px; width: 100%; background:url(../images/news-bg.jpg) 50% 0 no-repeat; background-attachment: fixed ; height: 400px;}
+.newbg{ margin-top: 20px; width: 100%;  background-attachment: fixed ; height: 400px;}
 .newbg  h2 { font-size: 50px; margin: 0;  font-weight: 100; color: #fff; padding-top: 200px;}
 .newbg p{ font-size: 20px; color: #fff; margin-top: 15px;}
-.casebg{ margin-top: 20px; width: 100%; background:url(../images/case-bg.jpg) 50% 0 no-repeat; background-attachment: fixed ; height: 400px;}
+.casebg{ margin-top: 20px; width: 100%;  background-attachment: fixed ; height: 400px;}
 .casebg  h2 { font-size: 50px; margin: 0;  font-weight: 100; color: #fff; padding-top: 200px;}
 .casebg p{ font-size: 20px; color: #fff; margin-top: 15px;}
-.probg{ margin-top: 20px; width: 100%; background:url(../images/service-bg.jpg) 50% 0 no-repeat; background-attachment: fixed ; height: 400px;}
+.probg{ margin-top: 20px; width: 100%;  background-attachment: fixed ; height: 400px;}
 .probg  h2 { font-size: 50px; margin: 0;  font-weight: 100; color: #fff; padding-top: 200px;}
 .probg p{ font-size: 20px; color: #fff; margin-top: 15px;}
-.indexobg{ margin-bottom: 35px; margin-top: 20px; width: 100%; background:url(../images/home-bg.jpg) 50% 0 no-repeat; background-attachment: fixed ; height: 400px;}
+.indexobg{ margin-bottom: 35px; margin-top: 20px; width: 100%;  background-attachment: fixed ; height: 400px;}
 .indexobg  h2 { font-size: 50px; margin: 0;  font-weight: 100; color: #fff; padding-top: 200px;}
 .indexobg p{ font-size: 20px; color: #fff; margin-top: 15px;}
 .newnav{ border-bottom: 1px solid #ddd; line-height: 50px;}

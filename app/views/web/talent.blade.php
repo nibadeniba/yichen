@@ -2,7 +2,10 @@
         
         
 @section('content')
-    <div class="talentbg">
+    <div class="talentbg" style="background: url(/web/images/bg7.jpg) 50% no-repeat">
+        <div class="logo">
+            <img src="/web/images/logo.png">
+        </div>
 	    <div class="container animated bounceInUp">
 	    	<h2>招贤纳士</h2>
 	    </div>

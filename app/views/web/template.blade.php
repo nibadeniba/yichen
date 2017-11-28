@@ -153,6 +153,13 @@
 			    font-weight: bold;
 			    margin-top: 20px;
 			}
+			.logo {
+			    width: 97px;
+			    height: 112px;
+			    position: absolute;
+			    left: 1800px;
+			    top: 300px;
+			}
 		</style>
 	</head>
 	<body>
@@ -240,6 +247,10 @@
 				</div>
 			</div>
 		</div>
+		<div class="copyright1">
+			
+	    	<p>{{$bottom->content}}</p>
+	    </div>
 	    @include('web/QQ')
 
 	</body>

@@ -51,7 +51,10 @@
         text-decoration: underline;
     }
 </style>
-    <div class="probg">
+    <div class="probg" style="background: url(/web/images/bg4.jpg) 50% no-repeat">
+        <div class="logo">
+            <img src="/web/images/logo.png">
+        </div>
 	    <div class="container animated bounceInUp">
 	    	<h2>九圣产品</h2>
 	    </div>

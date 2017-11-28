@@ -22,7 +22,10 @@
 		}
 	</style>
 	<link rel="stylesheet" type="text/css" href="css/poster.css">
-    <div class="casebg">
+    <div class="casebg" style="background: url(/web/images/bg3.jpg) 50% no-repeat">
+    	<div class="logo">
+            <img src="/web/images/logo.png">
+        </div>
 	    <div class="container animated bounceInUp">
 	    	<h2>案例展示</h2>
 	    </div>

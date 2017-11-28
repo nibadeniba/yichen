@@ -8,7 +8,10 @@
 .qrimg img{width:100px;height:100px;}
 -->
 </style>
-    <div class="contactbg">
+    <div class="contactbg" style="background: url(/web/images/bg8.jpg) 50% no-repeat">
+        <div class="logo">
+            <img src="/web/images/logo.png">
+        </div>
 	    <div class="container animated bounceInUp">
 	    	<h2>联系我们</h2>
 	    </div>

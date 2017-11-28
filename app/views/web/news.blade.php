@@ -1,7 +1,10 @@
 @extends('web.template')
 
 @section('content')
-    <div class="newbg">
+    <div class="newbg" style="background: url(/web/images/bg5.jpg) 50% no-repeat">
+    	<div class="logo">
+            <img src="/web/images/logo.png">
+        </div>
 	    <div class="container animated bounceInUp">
 	    	<h2>新闻资讯</h2>
 	    </div>
