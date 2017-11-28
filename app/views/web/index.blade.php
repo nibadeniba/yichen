@@ -147,6 +147,7 @@ $(function(){
 	var _height = $(window).height();
 
 	var opt = {
+		continuousVertical: true,
 		navigation: true,
 		onLeave: function () {
 			$('.anm').hide();
@@ -204,6 +205,9 @@ $(function(){
 	};
 
     $('#dowebok').fullpage(opt);
+    setInterval(function(){
+        $.fn.fullpage.moveSectionDown();
+    }, 4000);
 });
 </script>
 @stop
